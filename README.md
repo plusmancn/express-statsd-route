@@ -1,5 +1,5 @@
-# express-statsd-route (原始项目：[Uber Express statsd](https://github.com/uber/express-statsd))
-> Telegraf cheniu_api 项目埋点方案，采用 express 的 req.route 对象作为API埋点 key。
+# express-statsd-route 
+> 采用 express 的 req.route 对象作为API埋点 key，(原始项目：[Uber Express statsd](https://github.com/uber/express-statsd))
 
 ## Installation
 ``` bash
