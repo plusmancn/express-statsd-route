@@ -22,7 +22,12 @@ const PORT = 8080;
 app.use(expressStatsdRoute({
     keyPrefix: 'ESRTEST.',
     keyGeneFunc: function(req){
-        return req.route && req.route.path.split('/').join('.').substr(1);
+        var key = req.route && req.route.path.split('/').join('.').substr(1);
+        // tirm special characters，like ':'
+        if(key){
+          key = key.replace(/\:/gi, '-COLON-');
+        }
+        return key;
     }
 }));
 
@@ -44,6 +49,11 @@ app.listen(PORT, function(){
 **NOTICE**  
 最终组合的 key 需以 `.` 相连，如 part1.part2.part3 
 
+
+## TEST
+```
+DEBUG=Test:* node test/app.js
+```
 
 ## Options
 ```

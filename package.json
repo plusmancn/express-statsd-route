@@ -1,6 +1,6 @@
 {
   "name": "express-statsd-route",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Telegraf Express route 埋点方案",
   "main": "lib/express-statsd-route",
   "scripts": {

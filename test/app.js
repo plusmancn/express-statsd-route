@@ -11,7 +11,12 @@ const PORT = 8080;
 app.use(expressStatsdRoute({
     keyPrefix: 'ESRTEST.',
     keyGeneFunc: function(req){
-        return req.route && req.route.path.split('/').join('.').substr(1);
+        var key = req.route && req.route.path.split('/').join('.').substr(1);
+        // tirm special characters，like ':'
+        if(key){
+          key = key.replace(/\:/gi, '-COLON-');
+        }
+        return key;
     }
 }));
 
