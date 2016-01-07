@@ -25,7 +25,7 @@ app.use(expressStatsdRoute({
         var key = req.route && req.route.path.split('/').join('.').substr(1);
         // tirm special characters，like ':'
         if(key){
-          key = key.replace(/\:/gi, '-COLON-');
+            key = key.replace(/\:/gi, '-COLON-');
         }
         return key;
     }
