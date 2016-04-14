@@ -28,7 +28,9 @@ app.use(expressStatsdRoute({
             key = key.replace(/\:/gi, '-COLON-');
         }
         return key;
-    }
+    },
+    recordTimeout: 50, // 超时日志阀值
+    recordLog: '/tmp/timeout.log' // 超时日志详情文件位置
 }));
 
 app.get('/hello_world/:name', function(req, res){
